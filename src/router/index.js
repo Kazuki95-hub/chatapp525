@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import SignUp from '../views/SignUp.vue'
@@ -33,5 +34,21 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach((to,from,next) => {
+  if(
+    to.matched.some((record) => record.meta.requiresAuth) &&
+    !store.state.auth
+  ){
+    next({
+      path: "/",
+      query:{
+        redirect: to.fullPath,
+      },
+    });
+  } else {
+    next();
+  }
+});
 
 export default router

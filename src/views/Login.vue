@@ -12,13 +12,32 @@
         <div class="card">
             <p>ログイン</p>
             <div class="form">
-                <input type="text" placeholder="ID">
-                <input type="text" placeholder="パスワード">
-                <button>ログイン</button>
+                <input type="text" placeholder="メールアドレス" v-model= "email" />
+                <input type="text" placeholder="パスワード" v-model= "password" />
+                <button @click= "auth">ログイン</button>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            email:"",
+            password:""
+        };
+    },
+    methods: {
+        auth() {
+            this.$store.dispatch("login", {
+                email:this.email,
+                password:this.password
+            });
+        }
+    }
+}
+</script>
 
 <style scoped>
 .card {

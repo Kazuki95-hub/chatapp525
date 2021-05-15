@@ -3,10 +3,10 @@
         <div class="card">
             <p>新規登録</p>
             <div class="form">
-                <input type="text" placeholder="ユーザーネーム">
-                <input type="text" placeholder="プロフィール">
-                <input type="text" placeholder="メールアドレス">
-                <input type="text" placeholder="パスワード">
+                <input type="text" placeholder="ユーザーネーム" v-model= "name">
+                <input type="text" placeholder="プロフィール" v-model= "profile">
+                <input type="text" placeholder="メールアドレス" v-model= "email">
+                <input type="text" placeholder="パスワード" v-model= "password">
                 <button @click= "auth()">新規登録</button>
             </div>
         </div>
@@ -38,3 +38,34 @@ button {
     margin-top: 30px;
 }
 </style>
+
+<script>
+import axios from "axios";
+export default {
+    data(){
+        return {
+            name: "",
+            profile: "",
+            email: "",
+            password: ""
+        };
+    },
+    methods: {
+        auth() {
+            axios.post("https://infinite-plateau-44613.herokuapp.com/api/register",{
+                name:this.name,
+                profile: this.profile,
+                email: this.email,
+                password: this.password
+            })
+            .then(response => {
+                console.log(response);
+                this.$router.replace("/");
+            })
+            .catch(error => {
+                alert(error);
+            });
+        }
+    }
+}
+</script>
