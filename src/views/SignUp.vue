@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         auth() {
-            axios.post("https://infinite-plateau-44613.herokuapp.com/api/register",{
+            axios.post("https://quiet-reef-67544.herokuapp.com/api/register",{
                 name:this.name,
                 profile: this.profile,
                 email: this.email,
