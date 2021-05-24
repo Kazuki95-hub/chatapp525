@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         auth() {
-            axios.post("https://git.heroku.com/afternoon-tor-90011.git/api/register",{
+            axios.post("https://afternoon-tor-90011.herokuapp.com/api/register",{
                 name:this.name,
                 profile: this.profile,
                 email: this.email,
