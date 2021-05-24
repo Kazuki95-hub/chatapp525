@@ -29,14 +29,14 @@ export default new Vuex.Store({
   actions: {
     async login({ commit },{ email,password}) {
       const responseLogin = await axios.post(
-        "https://quiet-reef-67544.herokuapp.com/api/login",
+        "https://git.heroku.com/afternoon-tor-90011.git/api/login",
         {
           email: email,
           password: password,
         }
       );
       const responseUser = await axios.get(
-        "https://quiet-reef-67544.herokuapp.com//api/user",
+        "https://git.heroku.com/afternoon-tor-90011.git/api/user",
         {
           params: {
             email: email,
@@ -48,7 +48,7 @@ export default new Vuex.Store({
       router.replace("/home");
     },
     logout({commit}){
-      axios.post("https://quiet-reef-67544.herokuapp.com/api/logout",{
+      axios.post("https://git.heroku.com/afternoon-tor-90011.git/api/logout",{
         auth:this.state.auth,
       })
       .then((response) => {

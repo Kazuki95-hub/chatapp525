@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import store from '../store'
 import Login from '../views/Login.vue'
 import SignUp from '../views/SignUp.vue'
+import Modal from '../views/Modal.vue'
 
 Vue.use(VueRouter)
 
@@ -16,7 +17,12 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUp
-  }
+  },
+  {
+    path:'/modal',
+    name:'Modal',
+    component: Modal
+  },
 ]
 
 const router = new VueRouter({

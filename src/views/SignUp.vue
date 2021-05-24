@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         auth() {
-            axios.post("https://quiet-reef-67544.herokuapp.com/api/register",{
+            axios.post("https://git.heroku.com/afternoon-tor-90011.git/api/register",{
                 name:this.name,
                 profile: this.profile,
                 email: this.email,
@@ -60,7 +60,7 @@ export default {
             })
             .then(response => {
                 console.log(response);
-                this.$router.replace("/");
+                this.$router.replace("/modal");
             })
             .catch(error => {
                 alert(error);
