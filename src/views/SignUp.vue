@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         auth() {
-            axios.post("https://afternoon-tor-90011.herokuapp.com/api/register",{
+            axios.post("https://enigmatic-mesa-89496.herokuapp.com/api/register",{
                 name:this.name,
                 profile: this.profile,
                 email: this.email,
