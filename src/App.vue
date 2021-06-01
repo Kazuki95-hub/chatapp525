@@ -5,8 +5,21 @@
       <router-link to="/signup">SingUp</router-link>
     </div>
     <router-view/>
+  <ChatMessage />
+  <Message />
   </div>
 </template>
+
+<script>
+import ChatMessage from "../src/components/ChatMessage";
+import Message from "../src/components/Message";
+export default {
+  components: {
+    ChatMessage,
+    Message
+  }
+};
+</script>
 
 <style>
 #app {
@@ -15,6 +28,11 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: block;
+}
+
+.box{
+  display: inline-block;
 }
 
 #nav {
@@ -28,5 +46,15 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.text{
+  margin-top: 10px;
+}
+
+.message{
+  display:block;
+  padding: 3px;
+  border:1px solid black;
 }
 </style>
