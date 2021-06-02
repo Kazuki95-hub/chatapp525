@@ -22,9 +22,6 @@ export default {
 </script>
 
 <style scoped>
-/* .flex{
-    display: flex;
-} */
 
 .icon{
     width: 25px;

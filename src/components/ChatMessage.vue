@@ -1,12 +1,32 @@
 <template>
     <div class="chat">
         <p>メッセージ</p>
-        <textarea></textarea>
-        <div>
+        <textarea v-model= "share"></textarea>
+        <div @click= "send">
             <button>送信</button>
         </div>
     </div>
 </template>
+
+<script>
+import axios from "axios";
+export default {
+    data(){
+        return{
+            share: "",
+        };
+    },
+    methods: {
+        send(){
+            if(this.share === "") {
+                alert("メッセージを入力してください");
+            }else{
+                
+            }
+        }
+    }
+}
+</script>
 
 <style scoped>
 .chat{
