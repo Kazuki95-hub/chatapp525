@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
     data(){
         return{
@@ -21,7 +21,7 @@ export default {
             if(this.share === "") {
                 alert("メッセージを入力してください");
             }else{
-                
+
             }
         }
     }
