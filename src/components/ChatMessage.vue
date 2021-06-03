@@ -21,7 +21,7 @@ export default {
             if(this.share === "") {
                 alert("メッセージを入力してください");
             }else{
-
+                axios.post("https://calm-garden-63863.herokuapp.com/api/register")
             }
         }
     }
